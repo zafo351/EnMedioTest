@@ -2,7 +2,7 @@
 Prueba tecnica de  desarrollo para la empresa ENMEDIO
 
 
-![Modelo Relacional de la base de datos](https://github.com/zafo351/leal_test_tech/blob/main/DBModel.png)
+![Modelo Relacional de la base de datos](https://github.com/zafo351/EnMedioTest/blob/main/ModeloDB.png)
 
 
 swagger documentation: 
