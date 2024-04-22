@@ -1,0 +1,32 @@
+{
+  "name": "enmediotest",
+  "version": "1.0.0",
+  "description": "Tecnical test from ENMEDIO, this is backend in nodeJS whit integration to MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "tsc --build --force && node dist/src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zafo351/EnMedioTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zafo351/EnMedioTest/issues"
+  },
+  "homepage": "https://github.com/zafo351/EnMedioTest#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "inversify": "^6.0.2",
+    "swagger-ui-express": "^5.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/swagger-ui-express": "^4.1.6"
+  }
+}
