@@ -17,7 +17,7 @@ export class AppController {
     this.producController = producController;
   }
 
-  async controllerProductos(requ: RequestDto , resp: Response) {
+  async controllerProductos(requ: Request , resp: Response) {
     try{
       const productos = await this.producController.obtenerTodos();
       resp.json(productos);

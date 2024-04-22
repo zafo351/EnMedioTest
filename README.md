@@ -2,7 +2,7 @@
 Prueba tecnica de  desarrollo para la empresa ENMEDIO
 
 
-![Modelo Relacional de la base de datos](https://github.com/zafo351/EnMedioTest/blob/main/ModeloDB.png)
+
 
 
 swagger documentation: 
@@ -29,6 +29,8 @@ ventas: (Array) Arreglo de objetos que representan las ventas del producto.
     fechaVenta: (Date) Fecha de la venta.
     unidadesVendidas: (Number) Unidades vendidas en la venta.
     clima: (String) Clima en el momento de la venta.
+
+![Modelo Relacional de la base de datos](https://github.com/zafo351/EnMedioTest/blob/main/ModeloDB.png)
 
 ## Configuration 
 

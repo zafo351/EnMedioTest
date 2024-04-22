@@ -16,4 +16,14 @@ export class ProducController {
       
     } 
   }
+
+  async obtenerProduc(req: Request, res: Response): Promise<void> {
+    try{
+    const productos = await this.producService.obtenerTodosLosProductos();
+    return productos;
+    } catch (error) {
+      console.error(error);
+      
+    } 
+  }
 }

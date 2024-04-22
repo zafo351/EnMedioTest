@@ -12,7 +12,12 @@ const appController = new AppController(productoController);
 
 async function main() {
   const app: Application = express();
-  app.get(PREFIX + "/productos", appController.controllerProductos);
+
+  app.get(PREFIX + "/produc/findAll", appController.controllerProductos);
+  app.get(PREFIX + "/produc/find:id", appController.controllerProductos);
+  app.post(PREFIX + "/produc/create", appController.controllerProductos);
+  app.put(PREFIX + "/produc/update", appController.controllerProductos)
+
   await connectToMongodb();
   app.listen(PORT, () => {
     console.log(`App listening on port: ${PORT}`);
