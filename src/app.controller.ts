@@ -8,6 +8,7 @@
 
 import { Request, Response } from "express";
 import { ProducController } from './Infraestructure/Controller/product.controller'
+import { RequestDto } from './Domain/Dto/request.dto'
 
 export class AppController {
   private readonly producController: ProducController;
@@ -16,13 +17,13 @@ export class AppController {
     this.producController = producController;
   }
 
-  async obtenerProductos(req: Request, res: Response) {
+  async controllerProductos(requ: RequestDto , resp: Response) {
     try{
-    const productos = await this.producController.obtenerTodos(req);
-    res.json(productos);
+      const productos = await this.producController.obtenerTodos();
+      resp.json(productos);
     } catch (error){
       console.log(error);
-      res.status(500).send('Internal server error')
+      resp.status(500).send('Internal server error')
     }
 
   }

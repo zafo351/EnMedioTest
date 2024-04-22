@@ -4,3 +4,6 @@
 
 ## Contructor
 /dist
+
+## Docker
+/data/*

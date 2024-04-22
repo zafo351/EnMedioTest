@@ -2,14 +2,40 @@
 Prueba tecnica de  desarrollo para la empresa ENMEDIO
 
 
-![Modelo Relacional de la base de datos]()
+![Modelo Relacional de la base de datos](https://github.com/zafo351/leal_test_tech/blob/main/DBModel.png)
 
 
 swagger documentation: 
 
 http://localhost:8081/api-docs/
 
+## Documentacion
+
+1) Justificación del modelo de BD:
+
+No relacional: La naturaleza flexible de MongoDB permite almacenar información jerarquizada como las ventas de productos y el clima asociado a cada venta, sin la necesidad de rígidas relaciones tabulares.
+Escalabilidad: MongoDB se adapta a un crecimiento en el volumen de datos, ideal para el manejo de inventario y registro de ventas.
+Consultas eficientes: Las consultas con índices y agregaciones en MongoDB son eficientes para recuperar información específica de productos y ventas.
+
+2) Modelo:
+
+_id: (ObjectId) Identificador único del producto.
+nombre: (String) Nombre del producto.
+precio: (Number) Precio del producto.
+clasificacion: (String) Clasificación del producto (ej: Café, Té, Bebida).
+stock: (Number) Cantidad de unidades disponibles en stock.
+metodoPago: (String) Forma de pago aceptada para el producto (ej: Efectivo, Tarjeta).
+ventas: (Array) Arreglo de objetos que representan las ventas del producto.
+    fechaVenta: (Date) Fecha de la venta.
+    unidadesVendidas: (Number) Unidades vendidas en la venta.
+    clima: (String) Clima en el momento de la venta.
+
 ## Configuration 
+
+0) Como forma eficiente de ejecucion se uso docker para ejecutar de forma local solo se debe ejcutar el siguiente comanto y ejecutara todas los servicios y aplicaciones necesarias:
+```bash
+    $ docker-compose up 
+```
 
 1) Ejecutar el comando para instalar dependencias:
 ```bash
@@ -36,9 +62,3 @@ http://localhost:8081/api-docs/
 ```bash
     $ npm run start:dev
 ```
-6) Adjunto en el repositorio se encuentra el archivo leal_test.postman_collenction.json con la coleccion postman, para ejecutar las pruebas se debe tener en cuenta:
-
-    - Primero Crear el usuario (la billetera se crea automaticamente y se registra con el id del usuario)
-    - Segundo Crear el comercio
-    - Tercero Crear la sucursal (con el mismo id del comercio)
-    - Cuarto Crear la campaña (con el mismo id del comercio y la sucursal)

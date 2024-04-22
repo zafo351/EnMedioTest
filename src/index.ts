@@ -1,18 +1,22 @@
 import express, { Application } from "express";
 import swaggerUi from "swagger-ui-express";
-import dotenv from "dotenv";
 import { AppController } from "./app.controller";
 import { ProducController } from "./Infraestructure/Controller/product.controller";
+import { ProductoService } from "./Application/Service/product.service";
+import { PORT, PREFIX } from "./config";
+import { connectToMongodb } from "./Infraestructure/EntityManager/database";
 
-dotenv.config();
+const productoService = new ProductoService();
+const productoController = new ProducController(productoService);
+const appController = new AppController(productoController);
 
-const appController = new AppController();
-const app: Application = express();
-const port = process.env.PORT || 3000;
+async function main() {
+  const app: Application = express();
+  app.get(PREFIX + "/productos", appController.controllerProductos);
+  await connectToMongodb();
+  app.listen(PORT, () => {
+    console.log(`App listening on port: ${PORT}`);
+  });
+}
 
-
-app.get('/productos', appController.obtenerProductos);
-
-app.listen(port, () => {
-  console.log(`App listening on port: ${port}`);
-});
+main()

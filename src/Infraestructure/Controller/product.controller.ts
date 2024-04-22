@@ -1,19 +1,19 @@
-import { ProducService } from "../../Application/Service/product.service";
+import { ProductoService } from "../../Application/Service/product.service";
 
 export class ProducController {
-  private readonly producService: ProducService;
+  private readonly producService: ProductoService;
 
-  constructor(producService: ProducService) {
+  constructor(producService: ProductoService) {
     this.producService = producService;
   }
 
   async obtenerTodos(req: Request, res: Response): Promise<void> {
     try{
-    const productos = await this.producService.obtenerTodos();
+    const productos = await this.producService.obtenerTodosLosProductos();
     return productos;
     } catch (error) {
       console.error(error);
-      res.status(500).send('Internal server error');
+      
     } 
   }
 }
